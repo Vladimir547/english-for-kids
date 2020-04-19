@@ -194,7 +194,9 @@ window.onload = function start() {
       return array.sort(() => Math.random() - 0.5);
     }
     const shuffleArr = shuffle(newArr);
-    if (!repeat) {
+    if (repeat) {
+      audio.play();
+    } else {
       button.classList.add('repeat');
       audio.src = shuffleArr[index].audioSrc;
       /*allFront */
@@ -234,7 +236,7 @@ window.onload = function start() {
           if (index >= shuffleArr.length) {
             if (isWin && index === shuffleArr.length) {
               setTimeout(() => {
-                audio.src = '/src/audio/success.mp3';
+                audio.src = 'src/audio/success.mp3';
                 audio.play();
                 gameResualt.classList.add('result-good');
                 text.className = 'result-text';
@@ -242,7 +244,7 @@ window.onload = function start() {
               }, 1100);
             } else {
               setTimeout(() => {
-                audio.src = '/src/audio/failure.mp3';
+                audio.src = 'src/audio/failure.mp3';
                 audio.play();
               }, 1100);
               text.innerText = `you made ${mistakes} mistakes`;
@@ -257,7 +259,7 @@ window.onload = function start() {
             });
             button.classList.remove('repeat');
           }
-          setTimeout(() => wrap.remove(), 3000);
+          setTimeout(() => wrap.remove(), 5000);
         });
       });
     }
