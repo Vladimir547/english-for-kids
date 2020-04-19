@@ -259,7 +259,10 @@ window.onload = function start() {
             });
             button.classList.remove('repeat');
           }
-          setTimeout(() => wrap.remove(), 5000);
+          setTimeout(() => {
+            wrap.remove();
+            document.querySelector('.rating').remove();
+          }, 5000);
         });
       });
     }
