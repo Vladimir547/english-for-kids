@@ -240,6 +240,7 @@ window.onload = function start() {
                 audio.play();
                 gameResualt.classList.add('result-good');
                 text.className = 'result-text';
+                gameResualt.style.backgroundImage = 'url(src/img/success.png)';
                 text.innerText = 'Excellent!';
               }, 1100);
             } else {
@@ -249,6 +250,7 @@ window.onload = function start() {
               }, 1100);
               text.innerText = `you made ${mistakes} mistakes`;
               gameResualt.classList.add('result-lose');
+              gameResualt.style.backgroundImage = 'url(src/img/failure.png)';
               text.classList.add('lose-text');
             }
             wrap.append(text);
@@ -258,11 +260,11 @@ window.onload = function start() {
               el.classList.remove('inactive');
             });
             button.classList.remove('repeat');
+            setTimeout(() => {
+              wrap.remove();
+              document.querySelector('.rating').remove();
+            }, 5000);
           }
-          setTimeout(() => {
-            wrap.remove();
-            document.querySelector('.rating').remove();
-          }, 5000);
         });
       });
     }

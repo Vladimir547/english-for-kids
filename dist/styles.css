@@ -530,15 +530,12 @@ nav {
   top: 0px;
   left: 0px;
   background: white;
-  background-image: url();
 }
 .result-good {
-  background-image: url(/src/img/success.jpg);
   background-repeat: no-repeat;
   background-position: center;
 }
 .result-lose {
-  background-image: url(/src/img/failure.jpg);
   background-repeat: no-repeat;
   background-position: center;
 }
